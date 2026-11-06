@@ -315,12 +315,17 @@ def render_build() -> None:
         format_func=lambda name: PROVIDER_LABELS.get(name, name),
     )
     if provider_name == "demo":
-        st.caption("The demo uses canned responses and makes no network calls.")
+        st.caption(
+            "Demo mode ignores the pasted text and runs on a built-in sample document, "
+            "with canned responses and no network calls."
+        )
 
     progress = st.empty()
     if st.button("Generate quiz", type="primary"):
         try:
-            if url.strip():
+            if provider_name == "demo":
+                doc = extract_from_text(DEMO_TEXT, topic or "Onboarding sample")
+            elif url.strip():
                 doc = extract_from_url(url.strip())
             else:
                 if not source_text.strip():

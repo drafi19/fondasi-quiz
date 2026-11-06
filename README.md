@@ -93,6 +93,7 @@ These are the real failures hit while building this, including the ones that onl
 - **Two questions ended up measuring the same indicator.** The first blueprint for the Bank Indonesia release proposed both the Q3 and the Q2 growth rate for the same index. The duplicate check only compared exact prompt text, so both survived. Fixed in the prompt with a rule that facts must be about different claims. A semantic duplicate check is still on the list.
 - **Python 3.13 deprecations.** `class QuestionType(str, Enum)` and `@lru_cache(maxsize=None)` were both flagged during the build; they became `StrEnum` and `functools.cache`.
 - **The schema rejected a correct Indonesian true or false item.** The validator insisted on the English pair `["True", "False"]` while the prompt asked for output in the source language, so the first Indonesian run lost an item to a validation error. Fixed by accepting either `["True", "False"]` or `["Benar", "Salah"]`.
+- **Demo mode produced zero items as soon as a real source was pasted.** The demo provider replays quotes from a built-in document, and the pipeline correctly rejects any quote that is not in the pasted source, so every demo item was dropped. The caption also claimed the demo worked on your text. Fixed by running demo mode on its own sample document and saying so in the interface.
 
 ## Next changes
 
