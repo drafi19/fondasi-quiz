@@ -1,0 +1,78 @@
+{
+  "topic": "Property market update, Jakarta, Q3 2026",
+  "source_title": "Survei Harga Properti Residensial Triwulan III 2026: Harga Properti Residensial Tumbuh Terbatas",
+  "source_url": null,
+  "language": "source",
+  "items": [
+    {
+      "id": "c58dca8305e8",
+      "type": "mcq",
+      "prompt": "Berapa pertumbuhan Indeks Harga Properti Residensial (IHPR) pada triwulan III 2026 secara year-on-year (yoy)?",
+      "options": [
+        "0,58% (yoy)",
+        "5,80% (yoy)",
+        "0,85% (yoy)",
+        "1,58% (yoy)"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Kutipan menyebutkan IHPR pada triwulan III 2026 tumbuh sebesar 0,58% (yoy). Angka lain tidak sesuai dengan besaran pertumbuhan yang tercantum.",
+      "evidence_quote": "Indeks Harga Properti Residensial (IHPR) pada triwulan III 2026 yang tumbuh sebesar 0,58% (yoy)",
+      "source_section": "Paragraf 1",
+      "verify_note": "The quote explicitly states IHPR grew 0.58% (yoy) in Q3 2026, and the other numeric options are clearly different values."
+    },
+    {
+      "id": "bd1cd877cdee",
+      "type": "mcq",
+      "prompt": "Berdasarkan kutipan, bagaimana arah penjualan properti residensial di pasar primer pada triwulan III 2026?",
+      "options": [
+        "Menurun di seluruh tipe rumah",
+        "Meningkat hanya pada tipe rumah besar",
+        "Stabil di seluruh tipe rumah",
+        "Menurun hanya pada tipe rumah kecil"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Kutipan menyatakan penjualan properti residensial di pasar primer pada triwulan III 2026 menurun di seluruh tipe rumah, bukan hanya pada tipe tertentu. Karena itu pilihan yang menyebut kenaikan atau kestabilan salah.",
+      "evidence_quote": "penjualan properti residensial di pasar primer pada triwulan III 2026 menurun di seluruh tipe rumah.",
+      "source_section": "Paragraf 2",
+      "verify_note": "The quote explicitly states sales declined across all house types in Q3 2026, directly supporting option 0 while all other options contradict the quote."
+    },
+    {
+      "id": "86650e7369c3",
+      "type": "true_false",
+      "prompt": "Sumber utama pembiayaan pembangunan properti residensial oleh pengembang berasal dari dana internal perusahaan, dengan pangsa sebesar 73,94% dari total kebutuhan pembiayaan.",
+      "options": [
+        "Benar",
+        "Salah"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [
+        "Benar"
+      ],
+      "explanation": "Pernyataan sesuai dengan kutipan yang menyebut dana internal perusahaan sebagai sumber utama dengan pangsa 73,94%.",
+      "evidence_quote": "sumber utama pembiayaan pembangunan properti residensial oleh pengembang berasal dari dana internal perusahaan, dengan pangsa sebesar 73,94% dari total kebutuhan pembiayaan.",
+      "source_section": "Paragraf 3",
+      "verify_note": "The statement is a verbatim restatement of the quote, so 'Benar' is clearly correct and 'Salah' is unambiguously wrong."
+    },
+    {
+      "id": "a20af71cc900",
+      "type": "short_answer",
+      "prompt": "Skema pembelian apa yang digunakan mayoritas konsumen dalam pembelian rumah di pasar primer?",
+      "options": [],
+      "correct_index": null,
+      "accepted_answers": [
+        "KPR",
+        "Kredit Pemilikan Rumah",
+        "Kredit Pemilikan Rumah (KPR)"
+      ],
+      "explanation": "Mayoritas pembelian rumah di pasar primer oleh konsumen dilakukan melalui skema Kredit Pemilikan Rumah (KPR), dengan pangsa 70,68% dari total skema pembelian.",
+      "evidence_quote": "mayoritas pembelian rumah di pasar primer oleh konsumen dilakukan melalui skema pembelian Kredit Pemilikan Rumah (KPR), dengan pangsa sebesar 70,68% dari total skema pembelian.",
+      "source_section": "Paragraf 3",
+      "verify_note": "The quote explicitly states that the majority of primary-market home purchases by consumers used the KPR (Kredit Pemilikan Rumah) scheme with a 70.68% share."
+    }
+  ],
+  "dropped": [],
+  "model": "deepseek/deepseek-v4.1-flash-fast",
+  "schema_version": "1.0"
+}

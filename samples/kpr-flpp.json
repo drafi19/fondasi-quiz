@@ -1,0 +1,93 @@
+{
+  "topic": "KPR subsidi dan FLPP untuk rumah pertama",
+  "source_title": "Menteri PKP Minta BTN Percepat Penyaluran KUR Perumahan dan KPR FLPP Untuk MBR",
+  "source_url": null,
+  "language": "source",
+  "items": [
+    {
+      "id": "544fee8a51a3",
+      "type": "mcq",
+      "prompt": "Dalam kutipan tersebut, Nixon L.P. Napitupulu disebut menjabat sebagai apa di PT Bank Tabungan Negara (Persero) Tbk (BTN)?",
+      "options": [
+        "Direktur Utama",
+        "Direktur Consumer Banking",
+        "Komisaris Utama",
+        "Direktur Pemasaran"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Kutipan menyebut Nixon L.P. Napitupulu secara eksplisit sebagai Direktur Utama BTN. Posisi Direktur Consumer Banking pada kutipan itu dipegang oleh Evita Barliana.",
+      "evidence_quote": "Menteri PKP Maruarar Sirait bertemu dengan Direktur Utama PT Bank Tabungan Negara (Persero) Tbk (BTN) Nixon L.P. Napitupulu, didampingi Direktur Consumer Banking BTN Evita Barliana beserta jajaran Direksi BTN di Ruang Kerja Menteri PKP, Wisma Mandiri 2, Jakarta, Senin (2/11/2026).",
+      "source_section": "Pertemuan PKP dan BTN",
+      "verify_note": "The quote explicitly identifies Nixon L.P. Napitupulu as Direktur Utama BTN, while the other roles are not attributed to him."
+    },
+    {
+      "id": "d1357a12b5f3",
+      "type": "mcq",
+      "prompt": "Berapa capaian penyerapan terkait rumah subsidi yang disampaikan Riadi?",
+      "options": [
+        "Sekitar 64 persen dari target",
+        "Sekitar 46 persen dari target",
+        "Sekitar 84 persen dari target",
+        "Sekitar 14 persen dari target"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Riadi menyampaikan bahwa capaian penyerapan rumah subsidi telah mencapai sekitar 64 persen dari target yang ditetapkan. Angka lain tidak sesuai dengan kutipan.",
+      "evidence_quote": "Staf Ahli Bidang Sosial, Ekonomi, Budaya, Iptek, Industri, dan Lingkungan Kementerian PKP, Riadi, menyampaikan bahwa capaian penyerapan terkait rumah subsidi telah mencapai sekitar 64 persen dari target yang ditetapkan.",
+      "source_section": "Capaian rumah subsidi",
+      "verify_note": "The quote explicitly states Riadi reported absorption reached about 64 percent of target, and the other options are clearly different numbers."
+    },
+    {
+      "id": "74841f462d1c",
+      "type": "mcq",
+      "prompt": "Dalam skema piloting di Bogor, berapa maksimal fasilitas pembiayaan tambahan yang diberikan BTN setelah pengembang membangun rumah hingga selesai?",
+      "options": [
+        "Maksimal 30 persen",
+        "Maksimal 50 persen",
+        "Maksimal 70 persen",
+        "Maksimal 100 persen"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Skema ini menyebutkan BTN memberikan fasilitas pembiayaan tambahan maksimal 30 persen untuk melengkapi kebutuhan rumah. Angka tersebut menjadi batas maksimal pembiayaan tambahan dalam skema piloting di Bogor.",
+      "evidence_quote": "Melalui skema ini, pengembang terlebih dahulu membangun rumah hingga selesai, kemudian BTN memberikan fasilitas pembiayaan tambahan maksimal 30 persen untuk melengkapi kebutuhan rumah agar benar-benar siap dihuni.",
+      "source_section": "Inovasi pembiayaan BTN",
+      "verify_note": "The quote explicitly states BTN provides additional financing of up to 30 percent, making the other options definitively incorrect."
+    },
+    {
+      "id": "562523dda11e",
+      "type": "true_false",
+      "prompt": "BTN tengah memproses pengembangan program recycle housing melalui penyusunan regulasi yang diperlukan.",
+      "options": [
+        "Benar",
+        "Salah"
+      ],
+      "correct_index": 0,
+      "accepted_answers": [],
+      "explanation": "Pernyataan ini sesuai dengan kutipan yang menyebut BTN tengah memproses pengembangan program recycle housing melalui penyusunan regulasi yang diperlukan.",
+      "evidence_quote": "BTN juga tengah memproses pengembangan program recycle housing melalui penyusunan regulasi yang diperlukan.",
+      "source_section": "Program recycle housing",
+      "verify_note": "The quote directly restates the prompt, so 'Benar' is clearly correct and 'Salah' is clearly wrong."
+    },
+    {
+      "id": "558469b0b851",
+      "type": "short_answer",
+      "prompt": "Berapa jumlah masyarakat yang telah mendaftar untuk rumah susun subsidi di kawasan Manggarai?",
+      "options": [],
+      "correct_index": null,
+      "accepted_answers": [
+        "1.500 orang",
+        "sekitar 1.500 orang",
+        "1500 orang"
+      ],
+      "explanation": "Nixon menyampaikan bahwa jumlah masyarakat yang telah mendaftar mencapai sekitar 1.500 orang. Angka tersebut merupakan jumlah pendaftar rumah susun subsidi di kawasan Manggarai.",
+      "evidence_quote": "Terkait pengembangan rumah susun subsidi di kawasan Manggarai, Nixon menyampaikan bahwa jumlah masyarakat yang telah mendaftar mencapai sekitar 1.500 orang.",
+      "source_section": "Rumah susun Manggarai",
+      "verify_note": "The quote explicitly states that about 1,500 people registered for the subsidized flats in Manggarai, so the keyed answer is directly supported and unambiguous."
+    }
+  ],
+  "dropped": [],
+  "model": "deepseek/deepseek-v4.1-flash-fast",
+  "schema_version": "1.0"
+}
