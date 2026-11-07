@@ -70,7 +70,7 @@ All four prompts tell the model to write question text and explanations in the s
 
 The app talks to providers through one small interface: `generate_json(system, user, schema_hint) -> dict`. That keeps the pipeline independent of any vendor and makes the test suite fully offline with `FakeProvider`.
 
-The included providers are Gemini, OpenRouter, and CommandCode. Gemini uses its REST JSON mode. OpenRouter and CommandCode use OpenAI-compatible chat completions with a JSON response format. Model names come from environment variables, with sensible defaults in `fondasi/config.py`. API keys are read from the environment only. No key is written into a file, and `.env.example` contains variable names with empty values.
+The included providers are Gemini, OpenRouter, and CommandCode. The public demo can run on CommandCode's free preview model `reflection/beam:free`, which costs no credits; the committed samples were generated with `deepseek/deepseek-v4.1-flash-fast`. Gemini uses its REST JSON mode. OpenRouter and CommandCode use OpenAI-compatible chat completions with a JSON response format. Model names come from environment variables, with sensible defaults in `fondasi/config.py`. API keys are read from the environment only. No key is written into a file, and `.env.example` contains variable names with empty values.
 
 ## Sample runs
 
