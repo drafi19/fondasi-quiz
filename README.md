@@ -94,6 +94,8 @@ These are the real failures hit while building this, including the ones that onl
 - **Python 3.13 deprecations.** `class QuestionType(str, Enum)` and `@lru_cache(maxsize=None)` were both flagged during the build; they became `StrEnum` and `functools.cache`.
 - **The schema rejected a correct Indonesian true or false item.** The validator insisted on the English pair `["True", "False"]` while the prompt asked for output in the source language, so the first Indonesian run lost an item to a validation error. Fixed by accepting either `["True", "False"]` or `["Benar", "Salah"]`.
 - **Demo mode produced zero items as soon as a real source was pasted.** The demo provider replays quotes from a built-in document, and the pipeline correctly rejects any quote that is not in the pasted source, so every demo item was dropped. The caption also claimed the demo worked on your text. Fixed by running demo mode on its own sample document and saying so in the interface.
+- **A free-tier rate limit killed a whole run instead of waiting.** The first deployed attempt failed with `429 Too Many Requests`. The provider only retried on 5xx, so a 429 was treated as permanent, and the free tier allows five requests per minute while a five-item quiz needs about eleven calls. Fixed by treating 429 as retryable with a longer backoff (up to five attempts), and by moving the default model to `gemini-3.1-flash-lite`.
+- **The API key ended up inside an error message.** The Gemini endpoint takes the key as a query parameter, so the raw httpx error printed the full URL, key included, into the app and the logs. Provider errors now report the status code and a redacted response body instead of the request URL.
 
 ## Next changes
 
