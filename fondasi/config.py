@@ -11,7 +11,7 @@ import os
 DEFAULT_MAX_SOURCE_WORDS = 6000
 DEFAULT_TEMPERATURE = 0.2
 
-GEMINI_DEFAULT_MODEL = "gemini-2.5-flash"
+GEMINI_DEFAULT_MODEL = "gemini-3.1-flash-lite"
 
 
 def max_source_words() -> int:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import streamlit as st
 
+from fondasi.runtime_env import mirror_secrets
 from fondasi.ui.pages import render_build, render_review, render_take
 from fondasi.ui.styles import apply_styles
 
@@ -11,6 +12,13 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="collapsed",
 )
+
+# On Streamlit Community Cloud the key lives in st.secrets, not in the process
+# environment. Copy it across before any provider is built.
+try:
+    mirror_secrets(st.secrets)
+except Exception:
+    pass
 
 apply_styles()
 

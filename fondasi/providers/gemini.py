@@ -8,7 +8,7 @@ import os
 import httpx
 
 from fondasi.config import gemini_model, temperature
-from fondasi.providers.base import Provider, ProviderError
+from fondasi.providers.base import RETRYABLE_STATUS, Provider, ProviderError
 
 ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 
@@ -41,15 +41,22 @@ class GeminiProvider(Provider):
                 url,
                 params={"key": self.api_key},
                 json=body,
-                timeout=60.0,
+                timeout=90.0,
             )
             response.raise_for_status()
-        except httpx.HTTPError as exc:
-            transient = isinstance(exc, httpx.RequestError) or (
-                isinstance(exc, httpx.HTTPStatusError)
-                and exc.response.status_code >= 500
-            )
-            raise ProviderError(f"Gemini request failed: {exc}", transient=transient) from exc
+        except httpx.HTTPStatusError as exc:
+            status = exc.response.status_code
+            detail = " ".join(exc.response.text.split())[:300]
+            detail = detail.replace(self.api_key, "***")
+            raise ProviderError(
+                f"Gemini request failed with status {status}: {detail}",
+                transient=status in RETRYABLE_STATUS,
+            ) from exc
+        except httpx.RequestError as exc:
+            raise ProviderError(
+                f"Gemini request failed: {type(exc).__name__}",
+                transient=True,
+            ) from exc
 
         try:
             payload = response.json()

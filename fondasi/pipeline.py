@@ -124,8 +124,8 @@ class QuizPipeline:
 
     @retry(
         retry=retry_if_exception(_is_transient),
-        stop=stop_after_attempt(3),
-        wait=wait_exponential(multiplier=0.5, min=0.5, max=4),
+        stop=stop_after_attempt(5),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
         reraise=True,
     )
     def _provider_call(self, system: str, user: str, schema_hint: str) -> dict:

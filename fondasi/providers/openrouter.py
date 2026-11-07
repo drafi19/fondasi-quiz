@@ -8,7 +8,7 @@ import os
 import httpx
 
 from fondasi.config import openrouter_model, temperature
-from fondasi.providers.base import Provider, ProviderError
+from fondasi.providers.base import RETRYABLE_STATUS, Provider, ProviderError
 
 ENDPOINT = "https://openrouter.ai/api/v1/chat/completions"
 
@@ -42,13 +42,14 @@ class OpenRouterProvider(Provider):
         try:
             response = httpx.post(ENDPOINT, json=body, headers=headers, timeout=60.0)
             response.raise_for_status()
-        except httpx.HTTPError as exc:
-            transient = isinstance(exc, httpx.RequestError) or (
-                isinstance(exc, httpx.HTTPStatusError)
-                and exc.response.status_code >= 500
-            )
+        except httpx.HTTPStatusError as exc:
             raise ProviderError(
-                f"OpenRouter request failed: {exc}", transient=transient
+                f"OpenRouter request failed with status {exc.response.status_code}",
+                transient=exc.response.status_code in RETRYABLE_STATUS,
+            ) from exc
+        except httpx.RequestError as exc:
+            raise ProviderError(
+                f"OpenRouter request failed: {type(exc).__name__}", transient=True
             ) from exc
 
         try:
