@@ -84,18 +84,35 @@ a { color: var(--accent); }
 }
 
 .stButton > button, .stDownloadButton > button {
-  background: var(--accent);
-  color: #FFFFFF;
-  border: 1px solid var(--accent);
   border-radius: 8px;
   font-weight: 600;
   padding: 0.45rem 1rem;
 }
 
-.stButton > button:hover, .stDownloadButton > button:hover {
+.stButton > button[kind="primary"] {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+}
+.stButton > button[kind="primary"],
+.stButton > button[kind="primary"] p,
+.stButton > button[kind="primary"] div,
+.stButton > button[kind="primary"] span {
+  color: #FFFFFF !important;
+}
+.stButton > button[kind="primary"]:hover {
   background: #0B4742;
   border-color: #0B4742;
-  color: #FFFFFF;
+}
+
+.stButton > button:not([kind="primary"]) {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.stButton > button:not([kind="primary"]),
+.stButton > button:not([kind="primary"]) p,
+.stButton > button:not([kind="primary"]) div,
+.stButton > button:not([kind="primary"]) span {
+  color: var(--ink) !important;
 }
 
 div[data-testid="stExpander"] {
@@ -149,21 +166,27 @@ hr { border-color: var(--line); }
   overflow: hidden;
 }
 
-/* The engine picker renders in a portal outside .stApp, so it inherited a
-   background without a matching text colour. Force both. */
-div[data-testid="stDialog"] > div {
-  background: #FFFFFF;
-  border: 1px solid #E4E1DA;
+/* The engine picker renders in a portal outside .stApp. Force a light panel
+   and dark text on the text nodes only, so the buttons keep their own palette. */
+div[data-testid="stDialog"],
+div[role="dialog"] {
+  background-color: #FFFFFF !important;
 }
 div[data-testid="stDialog"] h1,
 div[data-testid="stDialog"] h2,
 div[data-testid="stDialog"] h3,
 div[data-testid="stDialog"] p,
-div[data-testid="stDialog"] div,
-div[data-testid="stDialog"] span,
+div[data-testid="stDialog"] li,
 div[data-testid="stDialog"] label,
-div[data-testid="stDialog"] li {
-  color: #1A1A1A;
+div[data-testid="stDialog"] [data-testid="stMarkdownContainer"],
+div[role="dialog"] h1,
+div[role="dialog"] h2,
+div[role="dialog"] h3,
+div[role="dialog"] p,
+div[role="dialog"] li,
+div[role="dialog"] label {
+  color: #1A1A1A !important;
+  font-size: 1rem;
 }
 </style>
 """
