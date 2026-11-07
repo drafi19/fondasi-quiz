@@ -13,6 +13,7 @@ from fondasi.normalize import normalize_for_match
 from fondasi.pipeline import BlueprintFact, QuizPipeline
 from fondasi.providers import FakeProvider, ProviderError, get_provider, provider_model
 from fondasi.schema import QuestionType, Quiz, QuizItem, SourceDoc
+from fondasi.ui.provider_prompt import provider_dialog
 
 DEMO_TEXT = """Fondasi is a small team that builds training material for new property agents. The onboarding program lasts three weeks and begins every Monday. Each new agent is paired with a senior mentor. Mentors meet their agents twice every week. All training notes are stored in the shared workspace. New agents may shadow a mentor on live viewings after the second week. The program ends with a short written assessment."""
 
@@ -309,11 +310,17 @@ def render_build() -> None:
         QuestionType.short_answer: sa_n,
     }
     provider_options = _available_providers()
+    chosen = st.session_state.get("fondasi_engine_choice")
+    if chosen not in provider_options:
+        provider_dialog(provider_options, PROVIDER_LABELS, "fondasi_engine_choice")
+        chosen = provider_options[0]
     provider_name = st.selectbox(
         "Provider",
         provider_options,
+        index=provider_options.index(chosen),
         format_func=lambda name: PROVIDER_LABELS.get(name, name),
     )
+    st.session_state["fondasi_engine_choice"] = provider_name
     if provider_name == "demo":
         st.caption(
             "Demo mode ignores the pasted text and runs on a built-in sample document, "
