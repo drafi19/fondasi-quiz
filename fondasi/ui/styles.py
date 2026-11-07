@@ -148,6 +148,23 @@ hr { border-color: var(--line); }
   border-radius: 12px;
   overflow: hidden;
 }
+
+/* The engine picker renders in a portal outside .stApp, so it inherited a
+   background without a matching text colour. Force both. */
+div[data-testid="stDialog"] > div {
+  background: #FFFFFF;
+  border: 1px solid #E4E1DA;
+}
+div[data-testid="stDialog"] h1,
+div[data-testid="stDialog"] h2,
+div[data-testid="stDialog"] h3,
+div[data-testid="stDialog"] p,
+div[data-testid="stDialog"] div,
+div[data-testid="stDialog"] span,
+div[data-testid="stDialog"] label,
+div[data-testid="stDialog"] li {
+  color: #1A1A1A;
+}
 </style>
 """
 
